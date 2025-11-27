@@ -13,11 +13,12 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              // LOGIN HEADER
               Text(
                 'Login to your account',
                 style: GoogleFonts.lato(
                   color: AppColors.cerulean,
-                  fontSize: 24,
+                  fontSize: AppConstants.fontSizeLarge,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 1.2,
                 ),
@@ -42,11 +43,12 @@ class LoginScreen extends StatelessWidget {
                   'Email',
                   style: GoogleFonts.nunitoSans(
                     fontWeight: FontWeight.w600,
-                    fontSize: 16,
+                    fontSize: AppConstants.fontSizeSmall,
                   ),
                 ),
               ),
 
+              // EMAIL INPUT
               TextFormField(
                 decoration: InputDecoration(
                   hintText: 'Enter your email',
@@ -80,7 +82,7 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
 
-              SizedBox(height: AppConstants.defaultPadding),
+              SizedBox(height: 20),
 
               Align(
                 alignment: Alignment.topLeft,
@@ -88,11 +90,12 @@ class LoginScreen extends StatelessWidget {
                   'Password',
                   style: GoogleFonts.nunitoSans(
                     fontWeight: FontWeight.w600,
-                    fontSize: 16,
+                    fontSize: AppConstants.fontSizeSmall,
                   ),
                 ),
               ),
 
+              // PASSWORD INPUT
               TextFormField(
                 decoration: InputDecoration(
                   hintText: 'Enter your password',
@@ -128,6 +131,59 @@ class LoginScreen extends StatelessWidget {
                     color: AppColors.cerulean,
                   ),
                 ),
+              ),
+
+              SizedBox(height: 20),
+
+              // LOGIN BUTTON
+              Container(
+                width: 250,
+                height: 50,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(
+                    AppConstants.defaultRadius,
+                  ),
+                  gradient: LinearGradient(
+                    colors: [
+                      AppColors.cerulean,
+                      AppColors.lightBlue,
+                    ],
+                  ),
+                ),
+                child: Center(
+                  child: Text(
+                    'Login',
+                    style: GoogleFonts.nunitoSans(
+                      color: Colors.white,
+                      fontSize: AppConstants.fontSizeMedium,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+
+              // SIGN UP OPTION
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Need an Account?',
+                    style: GoogleFonts.nunitoSans(
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 1.0,
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Sign Up',
+                      style: GoogleFonts.nunitoSans().copyWith(
+                        color: AppColors.cerulean,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
