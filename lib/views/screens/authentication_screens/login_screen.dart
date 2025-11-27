@@ -1,20 +1,136 @@
 import 'package:flutter/material.dart';
 import 'package:store_app/utils/app_colors.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:store_app/utils/app_constants.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Login to your account',
-              style: GoogleFonts.lato(),
-            ),
-          ],
+      body: Padding(
+        padding: const EdgeInsets.all(AppConstants.defaultPadding),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Login to your account',
+                style: GoogleFonts.lato(
+                  color: AppColors.cerulean,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 1.2,
+                ),
+              ),
+              Text(
+                'Explore the world exclusives',
+                style: GoogleFonts.lato(
+                  color: AppColors.cerulean,
+                  fontSize: 14,
+                  letterSpacing: 0.2,
+                ),
+              ),
+              Image.asset(
+                'assets/images/Illustration.png',
+                width: 200,
+                height: 200,
+              ),
+
+              Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  'Email',
+                  style: GoogleFonts.nunitoSans(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 16,
+                  ),
+                ),
+              ),
+
+              TextFormField(
+                decoration: InputDecoration(
+                  hintText: 'Enter your email',
+                  hintStyle: GoogleFonts.nunitoSans(
+                    color: Colors.grey,
+                    fontSize: 14,
+                  ),
+                  // Kada input NIJE fokusiran - underline
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: AppColors.cerulean,
+                      width: 1,
+                    ),
+                  ),
+                  // Kada input JE fokusiran - border okolo
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: AppColors.cerulean,
+                      width: 2,
+                    ),
+                  ),
+                  prefixIcon: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Image.asset(
+                      'assets/icons/email.png',
+                      color: AppColors.cerulean,
+                      width: 16,
+                      height: 16,
+                    ),
+                  ),
+                ),
+              ),
+
+              SizedBox(height: AppConstants.defaultPadding),
+
+              Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  'Password',
+                  style: GoogleFonts.nunitoSans(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 16,
+                  ),
+                ),
+              ),
+
+              TextFormField(
+                decoration: InputDecoration(
+                  hintText: 'Enter your password',
+                  hintStyle: GoogleFonts.nunitoSans(
+                    color: Colors.grey,
+                    fontSize: 14,
+                  ),
+                  // Kada input NIJE fokusiran - underline
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: AppColors.cerulean,
+                      width: 1,
+                    ),
+                  ),
+                  // Kada input JE fokusiran - border okolo
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: AppColors.cerulean,
+                      width: 2,
+                    ),
+                  ),
+                  prefixIcon: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Image.asset(
+                      'assets/icons/password.png',
+                      color: AppColors.cerulean,
+                      width: 16,
+                      height: 16,
+                    ),
+                  ),
+                  suffixIcon: Icon(
+                    Icons.visibility,
+                    color: AppColors.cerulean,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

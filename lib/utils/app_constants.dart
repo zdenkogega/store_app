@@ -5,5 +5,6 @@ class AppConstants {
 
   // Bilo koje druge konstante
   static const String appName = 'Store App';
-  static const double defaultPadding = 16.0;
+  static const double defaultPadding = 10.0;
+  static const double defaultRadius = 10.0;
 }
