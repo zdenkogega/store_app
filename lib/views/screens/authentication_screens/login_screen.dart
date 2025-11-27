@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:store_app/utils/app_colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:store_app/utils/app_constants.dart';
+import 'package:store_app/views/screens/authentication_screens/register_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -162,6 +163,8 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
 
+              SizedBox(height: 20),
+
               // SIGN UP OPTION
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -173,10 +176,17 @@ class LoginScreen extends StatelessWidget {
                       letterSpacing: 1.0,
                     ),
                   ),
-                  TextButton(
-                    onPressed: () {},
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => RegisterScreen(),
+                        ),
+                      );
+                    },
                     child: Text(
-                      'Sign Up',
+                      ' Sign Up',
                       style: GoogleFonts.nunitoSans().copyWith(
                         color: AppColors.cerulean,
                         fontWeight: FontWeight.bold,
