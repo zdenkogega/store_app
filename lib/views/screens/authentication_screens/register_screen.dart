@@ -102,11 +102,11 @@ class RegisterScreen extends StatelessWidget {
 
                   SizedBox(height: 20),
 
-                  // FULL NAME DISPLAY
+                  // USERNAME DISPLAY
                   Align(
                     alignment: Alignment.topLeft,
                     child: Text(
-                      'Full Name',
+                      'Username',
                       style: GoogleFonts.nunitoSans(
                         fontWeight: FontWeight.w600,
                         fontSize: AppConstants.fontSizeSmall,
@@ -114,17 +114,17 @@ class RegisterScreen extends StatelessWidget {
                     ),
                   ),
 
-                  // FULL NAME INPUT
+                  // USERNAME INPUT
                   TextFormField(
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return 'Please enter your full name';
+                        return 'Please enter your username';
                       } else {
                         return null;
                       }
                     },
                     decoration: InputDecoration(
-                      hintText: 'Enter your full name',
+                      hintText: 'Enter your username',
                       hintStyle: GoogleFonts.nunitoSans(
                         color: Colors.grey,
                         fontSize: 14,
